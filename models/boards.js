@@ -4,19 +4,11 @@ module.exports = (sequelize, DataTypes) => {
     {
       name: DataTypes.STRING,
       login: DataTypes.STRING,
-      password: DataTypes.STRING,
-      user_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: "Users",
-          key: "id"
-        }
-      }
+      password: DataTypes.STRING
     },
     {}
   );
   Boards.associate = db => {
-    Boards.hasMany(db.Columns);
     Boards.belongsTo(db.Users);
   };
   return Boards;

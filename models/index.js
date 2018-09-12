@@ -17,9 +17,7 @@ if (config.use_env_variable) {
 
 const db = {
   Users: sequelize.import("./users"),
-  Boards: sequelize.import("./boards"),
-  Columns: sequelize.import("./columns"),
-  Tasks: sequelize.import("./tasks")
+  Boards: sequelize.import("./boards")
 };
 
 Object.keys(db).forEach(modelName => {
